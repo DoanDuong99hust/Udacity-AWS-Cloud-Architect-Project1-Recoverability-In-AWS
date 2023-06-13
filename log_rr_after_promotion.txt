@@ -1,0 +1,58 @@
+[ec2-user@ip-10-2-10-16 ~]$ mysql -u admin -p -h uda-recoverability-secondary-rds.cgevpxzd0rbu.us-west-1.rds.amazonaws.com
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 121
+Server version: 8.0.32 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> show databases;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.014 sec)
+
+MySQL [(none)]> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MySQL [udacity]> show tables;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| users             |
++-------------------+
+1 row in set (0.004 sec)
+
+MySQL [udacity]> select * from users;
++------------+------------------+------------+
+| name       | email            | dob        |
++------------+------------------+------------+
+| Doan Duong | duongdv@demo.com | 1999-06-29 |
++------------+------------------+------------+
+1 row in set (0.001 sec)
+
+MySQL [udacity]> insert into users values('erik doan','erikdoan@demo.com','1999-06-29');
+Query OK, 1 row affected (0.014 sec)
+
+MySQL [udacity]> select * from users;
++------------+-------------------+------------+
+| name       | email             | dob        |
++------------+-------------------+------------+
+| Doan Duong | duongdv@demo.com  | 1999-06-29 |
+| erik doan  | erikdoan@demo.com | 1999-06-29 |
++------------+-------------------+------------+
+2 rows in set (0.002 sec)
+
+MySQL [udacity]> 
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Static Website</title>
+</head>
+<style>
+body {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('winter.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    font-size: 50px;
+    background-repeat: repeat;
+}
+</style>
+<body>
+    <span style="font-size: 50px;">Welcome to the upcoming season!!</span><br>
+    <span style="font-size: 40px; margin-top: 0;" id="current-time"></span>
+</body>
+<script>
+    var date = new Date()
+    var dateString = date.toDateString()
+    var time = date.toLocaleTimeString()
+    document.getElementById("current-time").innerHTML = dateString + ' ' + time;
+</script>
+</html>
